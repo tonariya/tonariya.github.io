@@ -1,6 +1,7 @@
 lastScrollLeft = 0;
 var orient = 0;
 var jump = 10; //scroll speed
+var continuous = 0; //cloud auto movement
 
 var main = $("div#mainPanel");
 var sky = $("div#sky");
@@ -27,6 +28,7 @@ var followx = 0,
 var lMouseX, lMouseY, moveX, moveY;
 
 /*Wave effect bit from stack overflow*/
+//NOT BEING APPLIED
 //@https://stackoverflow.com/questions/29586754/how-can-i-recreate-this-wavy-image-effect
 
 //-------------
@@ -50,7 +52,7 @@ $(window).bind('mousewheel', function(event) {
 moveIt();
 
 $(window).mousemove(function( event ) {
-	
+	//console.log(moveX);
 	//mouse x position in %, relative to max window width
 	var mouseX = (event.pageX/width)*100;
 	var max = 80; //base value from which auto scroll (right) should start
@@ -97,6 +99,7 @@ $(window).mousemove(function( event ) {
 });
 
 function moveIt(){
+	
 	x += (followx - x) * friction;
 	y += (followy - y) * friction;
 	if(activeLeft){
@@ -107,10 +110,17 @@ function moveIt(){
 	}
 	moveX = x+orient;
 
+	/*if(continuous<=0 && continous>-1000){
+		continuous-=5.05;
+	} else if(continuous<=-1000){
+		continuous+=0.05;
+	}*/
+	console.log(continuous);
+if(moveX<-37 && moveX>-3550){
 	//Apply movement to divs
 	sky.css({"-webkit-transform":"translate("+moveX/20+"px, "+y/20+"px)"});
-	clouds.css({"-webkit-transform":"translate("+moveX/15+"px, "+y/15+"px)"});
-	clouds2.css({"-webkit-transform":"translate("+moveX/12+"px, "+y/12+"px)"});
+	//clouds.css({"-webkit-transform":"translate("+(moveX/15)+"px, "+y/15+"px)"});
+	//clouds2.css({"-webkit-transform":"translate("+moveX/12+"px, "+y/12+"px)"});
 	grass.css({"-webkit-transform":"translate("+moveX/3.7+"px, "+y/4+"px)"});
 	grass2.css({"-webkit-transform":"translate("+moveX/3+"px, "+y/3+"px)"});
 	freya.css({"-webkit-transform":"translate("+moveX/3.5+"px, "+y/4+"px)"});
@@ -118,5 +128,8 @@ function moveIt(){
 	grass3.css({"-webkit-transform":"translate("+moveX/3.5+"px, "+y/4+"px)"});
 
 	main.css({"-webkit-transform":"translate("+moveX+"px, "+y+"px)"});
+}
+	clouds.css({"-webkit-transform":"translate("+continuous+"px, "+y/15+"px)"});
+	clouds2.css({"-webkit-transform":"translate("+continuous/3+"px, "+y/12+"px)"});
 	window.requestAnimationFrame(moveIt);
 }
