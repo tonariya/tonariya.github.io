@@ -48,4 +48,7 @@
     div#worksC div.imgHolder{
         width: 100%;
     }
+    div.lane{
+        visibility: hidden;
+    }
 }
