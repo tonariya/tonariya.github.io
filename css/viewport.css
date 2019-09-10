@@ -1,0 +1,51 @@
+/*---- 4 K -----*/
+@media screen and (min-width: 2560px) {
+    /*body { background-color: green; }*/
+    div#center.original{
+        margin-top: 18%;
+        width: 60%;
+        min-width: 500px;
+        max-width: 950px;
+    }
+    h3{
+        font-size: 32px;
+        min-height: 32px;
+    }
+    h1{
+        font-size: 54px;
+    }
+    p{
+        font-size: 32px;
+    }
+
+}
+
+/*----Tablet-----*/
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    /*body { background-color: pink; }*/
+    div#center.original{
+        margin-top: 2%;
+        width: 50%;
+        min-width: 400px;
+    }
+    div.fade{
+        opacity: 0.9;
+    }
+}
+  
+/*----Mobile S / M / L-----*/
+@media screen and (max-width: 767px) {
+    /*body { background-color: yellow; }*/
+    div.fade{
+        opacity: 0.9;
+    }
+    div#center.original{
+        width: 90%;
+    }
+    div.empty{
+        height: 15px;
+    }
+    div#worksC div.imgHolder{
+        width: 100%;
+    }
+}

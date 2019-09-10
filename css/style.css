@@ -1,0 +1,354 @@
+#{
+    margin: 0 auto;
+    padding: 0;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    color: rgb(40, 24, 32);
+    scroll-behavior: smooth;
+}
+@keyframes loadSlide{
+    0% {
+        top: 0;
+        height: 20%;
+    }
+
+    40% {
+        top: 0;
+        height: 50%;
+    }
+
+    50% {
+        top: 0;
+        height: 90%;
+    }
+
+    60% {
+        top: 45%;
+        height: 50%;
+    }
+
+    100% {
+        top: 100%;
+        height: 0;
+    }
+}
+/*++++++++++++++++++*/
+body{
+    font-family: 'snes';
+    font-size: 22px;
+    overflow: hidden;
+    display: inline;
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    min-width: 100%;
+    max-width: 100%;
+    background-color: rgb(248, 248, 248);
+
+    -webkit-box-shadow: inset 0px -81px 87px -86px rgba(0,0,0,0.69);
+    -moz-box-shadow: inset 0px -81px 87px -86px rgba(0,0,0,0.69);
+    box-shadow: inset 0px -81px 87px -86px rgba(0,0,0,0.69);
+
+    transition: min-width 1s, min-height 1s, max-height 1s, margin-top 1s, width 1s, height 1s;
+    -moz-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 1s, width 1s, height 1s;
+    -webkit-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 1s, width 1s, height 1s;
+}
+/*WORK WINDOW ANIMATION*/
+div#center.original{
+    height: auto;
+    width: 45%;
+    z-index: 100;
+    margin-top: 4%;
+    margin-bottom: 20px;
+    max-height: 1200px;
+    min-width: 300px;
+    max-width: 650px;
+    background-color: rgb(248, 248, 248);
+}
+div#center.enlarge{
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+}
+div#center{
+    border: 4px solid rgb(40, 24, 32);
+    border-radius: 2px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    height: auto;
+    -webkit-box-shadow: 2px 5px 14px -6px rgb(40, 24, 32);
+    -moz-box-shadow: 2px 5px 14px -6px rgb(40, 24, 32);
+    box-shadow: 2px 5px 14px -6px rgb(40, 24, 32);
+
+    transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
+    -moz-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
+    -webkit-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
+}
+div.bar{
+    position: relative;
+    cursor: grab;
+    top: 0;
+    background-color:rgb(40, 24, 32);
+    border-bottom: 4px solid rgb(40, 24, 32);
+    width: 100%;
+    min-height: 24px;
+    height: auto;
+    max-height: 45px;
+    display: inline-block;
+    -webkit-box-shadow: 2px 5px 14px -6px rgb(40, 24, 32);
+    -moz-box-shadow: 2px 5px 14px -6px rgb(40, 24, 32);
+    box-shadow: 2px 5px 14px -6px rgb(40, 24, 32);
+    z-index: 600;
+}
+div.bar div, .bar h3{
+    color: rgb(100, 100, 100);
+    display: inline;
+    font-size: 22px;
+}
+div.bar div.left{
+    margin-left: 6%;
+    height: 100%;
+    margin-top: 4px;
+}
+.bar h3{
+    min-height: 24px;
+    height: 100%;
+    margin-top: 15px;
+    margin-right: 26px;
+}
+.empty{
+    width: 100%;
+    min-width: 100%;
+    display: block;
+    height: 25px;
+}
+
+div.min{
+    float: right;
+    min-width: 20px;
+    min-height: 15px;
+    margin-right: 14px;
+    border-bottom: 2px solid rgb(100, 100, 100);
+}
+div#homeC, div#aboutC, div#contactC, div#worksC{
+    display: inline-block;
+    height: 100%;
+    min-height: 100px;
+    width: 90%;
+    padding-left: 6%;
+}
+div#worksC{
+    overflow-y: auto;
+    position: absolute;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+div#worksC div.imgHolder{
+    width: 49.5%;
+    max-height: 700px;
+    max-width: 1300px;
+    margin: 0;
+}
+div#content{
+    min-width: 100%;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(248, 248, 248);
+}
+div.fade{
+    opacity: 0.6;
+    transition: ease-in opacity 0.1s;
+    -moz-transition: ease-in opacity 0.1s;
+    -webkit-transition: ease-in opacity 0.1s;
+}
+div.hover:hover{
+    opacity: 1;
+    /*z-index: 500;*/
+}
+
+/*LANE 1 ANIMATION*/
+@keyframes slide{
+    0% {
+        margin-left: 0px;
+     }
+     100% {
+        margin-left: -2125px;
+     }
+}
+/*LANE 2 ANIMATION*/
+@keyframes slide2{
+    0% {
+        margin-left: -2125px;
+     }
+     100% {
+        margin-left: 0px;
+     }
+}
+/*--------------*/
+#lane-wrap{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.first{
+    animation: slide 20s linear infinite;
+}
+.first2{
+    animation: slide2 20s linear infinite;
+}
+div.lane{
+    display: block;
+    position: absolute;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    height: 54%;
+    width: 3550px;
+}
+div#lane1{
+    opacity: 0.9;
+    top: 0;
+}
+div#lane1 div.imgHolder{
+    top: 4px;
+}
+div#lane2{
+    bottom: 0;
+    z-index: 100;
+}
+div.lane div.imgHolder{
+    max-width: 450px;
+    width: 40%;
+    height: auto;
+    max-height: 340px;
+    margin-right: 225px;
+    margin-left: 225px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    opacity: 0.65;
+}
+div.shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-left: 22px;
+    margin-top: 20px;
+    z-index: -10;
+    -webkit-box-shadow: inset 0px -100px 30px -76px rgb(248, 248, 248);
+    -moz-box-shadow: inset 0px -100px 30px -76px rgb(248, 248, 248);
+    box-shadow: inset 0px -100px 30px -76px rgb(248, 248, 248);
+
+    transition: margin-left 1s, margin-right 1s;
+    -moz-transition: margin-left 1s, margin-right 1s;
+    -webkit-transition: margin-left 1s, margin-right 1s;
+    background-image: url("../img/shade2.png");
+    background-repeat: repeat;
+}
+div.imgHolder{
+    position: relative;
+    display: inline-block;
+    background-color: unset;
+}
+div.imgHolder img{
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    float: left;
+    transition: ease-in opacity 0.1s;
+    -moz-transition: ease-in opacity 0.1s;
+    -webkit-transition: ease-in opacity 0.1s;
+}
+.lane div.imgHolder:hover{
+    opacity: 1;
+}
+
+/*GENERAL SETTINGS*/
+::-webkit-scrollbar{
+    display: none;
+}
+div.nullH{
+    max-height: 0;
+    height: 0;
+    min-height: 24px;
+}
+div.download, .download h3{
+    display: inline;
+    width: auto;
+}
+h1, h2, h3{
+    color: rgb(20, 20, 20);
+}
+#content p{
+    color: rgb(40, 24, 32);
+}
+
+a{
+    text-decoration: none;
+    color: none;
+}
+a:active{
+    color: none;
+}
+a:hover{
+    color: none;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+    text-align: right;
+}
+.click{
+    cursor: pointer;
+}
+.active{
+    color: #0f380f;
+}
+.hide{
+    max-height: 0;
+    height: 0;
+    visibility: hidden;
+    position: absolute;
+    display: none;
+    transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
+    -moz-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
+    -webkit-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
+}
+div.load{
+    position: absolute;
+    min-width: 100%;
+    width: 100%;
+    height: 0;
+    background-color: rgb(40, 24, 32);
+    z-index: 500;
+}
+.loadAnim{
+    -webkit-animation: 0.5s ease-in loadSlide;
+    animation: 0.5s ease-in loadSlide;
+}
+@font-face {
+    font-family: 'snes';
+    src: url('font/SNESesque.ttf'); /* IE9 Compat Modes */
+    src: url('font/SNESesque.ttf?#iefix') format('truetype'), /* IE6-IE8 */
+         url('font/SNESesque.ttf') format('truetype'), /* Super Modern Browsers */
+         url('font/SNESesque.ttf') format('truetype'), /* Pretty Modern Browsers */
+         url('font/SNESesque.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('font/SNESesque.ttf') format('truetype'); /* Legacy iOS */
+  }
