@@ -40,7 +40,8 @@ body{
     font-family: 'snes';
     font-size: 22px;
     overflow: hidden;
-    display: inline;
+    scroll-behavior: unset;
+    display: inline-block;
     margin: 0 auto;
     padding: 0;
     height: 100%;
@@ -54,10 +55,6 @@ body{
     -webkit-box-shadow: inset 0px -81px 87px -86px rgba(0,0,0,0.69);
     -moz-box-shadow: inset 0px -81px 87px -86px rgba(0,0,0,0.69);
     box-shadow: inset 0px -81px 87px -86px rgba(0,0,0,0.69);
-
-    transition: min-width 1s, min-height 1s, max-height 1s, margin-top 1s, width 1s, height 1s;
-    -moz-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 1s, width 1s, height 1s;
-    -webkit-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 1s, width 1s, height 1s;
 }
 /*WORK WINDOW ANIMATION*/
 div#center.original{
@@ -92,6 +89,7 @@ div#center{
     box-shadow: 2px 5px 14px -6px rgb(40, 24, 32);
 
     transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
+    -ms-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
     -moz-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
     -webkit-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
 }
@@ -105,7 +103,6 @@ div.bar{
     min-height: 24px;
     height: auto;
     max-height: 45px;
-    display: inline-block;
     -webkit-box-shadow: 2px 5px 14px -6px rgb(40, 24, 32);
     -moz-box-shadow: 2px 5px 14px -6px rgb(40, 24, 32);
     box-shadow: 2px 5px 14px -6px rgb(40, 24, 32);
@@ -120,6 +117,9 @@ div.bar div.left{
     margin-left: 6%;
     height: 100%;
     margin-top: 4px;
+}
+div.bar div.left.margin-adjust{
+    margin-left: 12%;
 }
 .bar h3{
     min-height: 24px;
@@ -142,7 +142,7 @@ div.min{
     border-bottom: 2px solid rgb(100, 100, 100);
 }
 div#homeC, div#aboutC, div#contactC, div#worksC{
-    display: inline-block;
+    display: block;
     height: 100%;
     min-height: 100px;
     width: 90%;
@@ -172,6 +172,7 @@ div.fade{
     opacity: 0.6;
     transition: ease-in opacity 0.1s;
     -moz-transition: ease-in opacity 0.1s;
+    -ms-transition: ease-in opacity 0.1s;
     -webkit-transition: ease-in opacity 0.1s;
 }
 div.hover:hover{
@@ -208,9 +209,15 @@ div.hover:hover{
 }
 .first{
     animation: slide 20s linear infinite;
+    -webkit-animation: slide 20s linear infinite;
+    -moz-animation: slide 20s linear infinite;
+    -ms-animation: slide 20s linear infinite;
 }
 .first2{
     animation: slide2 20s linear infinite;
+    -webkit-animation: slide2 20s linear infinite;
+    -moz-animation: slide2 20s linear infinite;
+    -ms-animation: slide2 20s linear infinite;
 }
 div.lane{
     display: block;
@@ -253,10 +260,6 @@ div.shadow{
     -webkit-box-shadow: inset 0px -100px 30px -76px rgb(248, 248, 248);
     -moz-box-shadow: inset 0px -100px 30px -76px rgb(248, 248, 248);
     box-shadow: inset 0px -100px 30px -76px rgb(248, 248, 248);
-
-    transition: margin-left 1s, margin-right 1s;
-    -moz-transition: margin-left 1s, margin-right 1s;
-    -webkit-transition: margin-left 1s, margin-right 1s;
     background-image: url("../img/shade2.png");
     background-repeat: repeat;
 }
@@ -270,16 +273,30 @@ div.imgHolder img{
     width: 100%;
     display: block;
     float: left;
-    transition: ease-in opacity 0.1s;
-    -moz-transition: ease-in opacity 0.1s;
-    -webkit-transition: ease-in opacity 0.1s;
+    transition: ease-in opacity 0.5s;
+    -moz-transition: ease-in opacity 0.5s;
+    -ms-transition: ease-in opacity 0.5s;
+    -webkit-transition: ease-in opacity 0.5s;
 }
 .lane div.imgHolder:hover{
     opacity: 1;
 }
 
+#worksC div.imgHolder{
+    opacity: 0.8;
+}
+#worksC div.imgHolder:hover{
+    opacity: 1;
+}
+
 /*GENERAL SETTINGS*/
 ::-webkit-scrollbar{
+    display: none;
+}
+::scrollbar{
+    display: none;
+}
+::-moz-scrollbar{
     display: none;
 }
 div.nullH{
@@ -310,6 +327,10 @@ a:hover{
 }
 .left{
     float: left;
+    transition: ease-in margin-left 0.1s;
+    -ms-transition: ease-in margin-left 0.1s;
+    -moz-transition: ease-in margin-left 0.1s;
+    -webkit-transition: ease-in margin-left 0.1s;
 }
 .right{
     float: right;
@@ -328,6 +349,7 @@ a:hover{
     position: absolute;
     display: none;
     transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
+    -ms-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
     -moz-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
     -webkit-transition: min-width 1s, min-height 1s, max-height 1s, margin-top 0.5s, width 0.5s, height 0.5s;
 }
@@ -340,6 +362,8 @@ div.load{
     z-index: 500;
 }
 .loadAnim{
+    -ms-animation: 0.5s ease-in loadSlide;
+    -moz-animation: 0.5s ease-in loadSlide;
     -webkit-animation: 0.5s ease-in loadSlide;
     animation: 0.5s ease-in loadSlide;
 }

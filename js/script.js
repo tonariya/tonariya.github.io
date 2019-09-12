@@ -95,6 +95,7 @@ $("div.min").on("click", function(){
 $contact.on("click", function(){
     if(center.hasClass("enlarge")){
         center.removeClass("enlarge").addClass("original");
+        $(".bar div.left").removeClass("margin-adjust");
         $lane1.show().removeClass("hide");
         $lane2.show().removeClass("hide");
         center.draggable( 'enable' );
@@ -133,6 +134,7 @@ $home.on("click", function(){
         loadAnimation("div.load");
         if(center.hasClass("enlarge")){
             center.removeClass("enlarge").addClass("original");
+            $(".bar div.left").removeClass("margin-adjust");
             $lane1.show().removeClass("hide");
             $lane2.show().removeClass("hide");
             center.draggable( 'enable' );
@@ -157,6 +159,7 @@ $about.on("click", function(){
         loadAnimation("div.load");
         if(center.hasClass("enlarge")){
             center.removeClass("enlarge").addClass("original");
+            $(".bar div.left").removeClass("margin-adjust");
             $lane1.show().removeClass("hide");
             $lane2.show().removeClass("hide");
             center.draggable( 'enable' );
@@ -178,6 +181,8 @@ $works.on("click", function(){
 
         $lane1.hide().addClass("hide");
         $lane2.hide().addClass("hide");
+
+        $(".bar div.left").addClass("margin-adjust");
         
         center.draggable( 'disable' );
 
