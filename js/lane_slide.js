@@ -5,10 +5,9 @@ var lane = $(".lane"),
 
 function init(){
     $( "#lane1 div.imgHolder" ).each(function() {
-        //pick two random numbers between 80 and 230 for x, etc
-        var x = Math.random() * 150 + 80;
+        var x = 150;
         var y = Math.random() * (100 - (-20)) + (-20);
-    
+        
         $(this).css({
             "top":y+"px",
             "margin-left":x+"px"
@@ -17,7 +16,7 @@ function init(){
     
     $( "#lane2 div.imgHolder" ).each(function() {
         //pick two random numbers between 0 and 100 for x, etc
-        var x = Math.random() * 100;
+        var x = 16;
         var y = Math.random() * (-100);
     
         $(this).css({
@@ -52,7 +51,6 @@ $("#lane1 div.imgHolder").eq(0).addClass("first");
 
 $lane1.scrollLeft( sliderStartForward );
 $lane1.on('scroll', function(){
-    console.log(sliderEndForward);
     if($lane1.scrollLeft() < 1){
         $lane1.scrollLeft(sliderStartBackward);
     }

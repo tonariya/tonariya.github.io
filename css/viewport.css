@@ -91,6 +91,10 @@
         width: 90%;
         display: block;
     }
+    div#center.enlarge, div#content, div#worksC{
+        overflow-y: unset;
+        height: 100%;
+    }
     div.bar div.left.margin-adjust, div.bar div.left, div.infoTxt{
         margin-left: 6%;
     }

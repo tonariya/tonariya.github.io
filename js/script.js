@@ -60,7 +60,6 @@ $( document ).ready(function() {
     }
     loadAnimation("div.load");
 });
-
 $(".left.click").on("click", function(e){
     e.preventDefault();
     loadAnimation("div.load");
