@@ -25,6 +25,7 @@ var tabletSize = 1024;
 var width = $(window).width();
 
 $( document ).ready(function() {
+    $("div#loadScreen").remove();
 
     //if being viewed in tablet or smaller,
     //remove perspective script from usage
