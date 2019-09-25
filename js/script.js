@@ -31,6 +31,7 @@ $( document ).ready(function() {
     //remove perspective script from usage
     if( width <= tabletSize){
         $("#persp").remove();
+        $("div.load").remove();
     }
 
     view = window.sessionStorage.getItem('view');
@@ -38,26 +39,26 @@ $( document ).ready(function() {
         $homeC.addClass("hide");
         $("#aboutC").removeClass("hide");
 
-        $about.css("color", "rgb(248, 248, 248)");
-        $home.css("color", "rgb(150, 150, 150)");
-        $works.css("color", "rgb(150, 150, 150)");
-        $contact.css("color", "rgb(150, 150, 150)");
+        $about.addClass("thisOn");
+        $home.removeClass("thisOn");
+        $works.removeClass("thisOn");
+        $contact.removeClass("thisOn");
 
     } else if(view == "contact"){
         $homeC.addClass("hide");
         $("#contactC").removeClass("hide");
 
-        $contact.css("color", "rgb(248, 248, 248)");
-        $home.css("color", "rgb(150, 150, 150)");
-        $works.css("color", "rgb(150, 150, 150)");
-        $about.css("color", "rgb(150, 150, 150)");
+        $contact.addClass("thisOn");
+        $home.removeClass("thisOn");
+        $works.removeClass("thisOn");
+        $about.removeClass("thisOn");
     } else if(view == "home"){
         $homeC.removeClass("hide");
 
-        $home.css("color", "rgb(248, 248, 248)");
-        $contact.css("color", "rgb(150, 150, 150)");
-        $works.css("color", "rgb(150, 150, 150)");
-        $about.css("color", "rgb(150, 150, 150)");
+        $home.addClass("thisOn");
+        $contact.removeClass("thisOn");
+        $works.removeClass("thisOn");
+        $about.removeClass("thisOn");
     }
     loadAnimation("div.load");
 });
@@ -69,27 +70,26 @@ $(".bar h3").on("click", function(){
     $("div#content").show();
 });
 $("div.min").on("click", function(){
-    $("div#content").toggle(".hide");
-    center.toggleClass("nullH");
-    
+    $("div#content").toggle("hide");
+
     //for when searching in "works" and the window is minimized
     //reveal background lanes
-    if(center.hasClass("enlarge") && $works.hasClass("hide")){
+    if(center.hasClass("enlarge") && !center.hasClass("nullH")){
         $lane1.show().removeClass("hide");
         $lane2.show().removeClass("hide");
-        $("div#content").addClass(".hide").hide();
-        center.addClass("nullH");
+        $("div#content").addClass("hide");
+
 
         console.log("hide");
-    } else if(center.hasClass("enlarge nullH") && !$works.hasClass("hide")){
+    } else if(center.hasClass("enlarge nullH")){
         //and hide it otherwise
         $lane1.hide().addClass("hide");
         $lane2.hide().addClass("hide");
         $("div#content").removeClass("hide").show();
-        center.removeClass("nullH");
 
         console.log("show");
     }
+    center.toggleClass("nullH");
 });
 
 $contact.on("click", function(){
@@ -108,10 +108,10 @@ $contact.on("click", function(){
         $("#worksC").addClass("hide");
         $("#contactC").hide().removeClass("hide");
 
-        $contact.css("color", "rgb(248, 248, 248)");
-        $home.css("color", "rgb(150, 150, 150)");
-        $works.css("color", "rgb(150, 150, 150)");
-        $about.css("color", "rgb(150, 150, 150)");
+        $contact.addClass("thisOn");
+        $home.removeClass("thisOn");
+        $works.removeClass("thisOn");
+        $about.removeClass("thisOn");
 
         loadAnimation("div.load");
         $("#contactC").fadeIn(1000);
@@ -126,10 +126,10 @@ $home.on("click", function(){
         $("#worksC").addClass("hide");
         $("#homeC").hide().removeClass("hide");
 
-        $home.css("color", "rgb(248, 248, 248)");
-        $about.css("color", "rgb(150, 150, 150)");
-        $works.css("color", "rgb(150, 150, 150)");
-        $contact.css("color", "rgb(150, 150, 150)");
+        $home.addClass("thisOn");
+        $about.removeClass("thisOn");
+        $works.removeClass("thisOn");
+        $contact.removeClass("thisOn");
 
         loadAnimation("div.load");
         if(center.hasClass("enlarge")){
@@ -151,10 +151,10 @@ $about.on("click", function(){
         $("#worksC").addClass("hide");
         $("#aboutC").hide().removeClass("hide");
 
-        $about.css("color", "rgb(248, 248, 248)");
-        $home.css("color", "rgb(150, 150, 150)");
-        $contact.css("color", "rgb(150, 150, 150)");
-        $works.css("color", "rgb(150, 150, 150)");
+        $about.addClass("thisOn");
+        $home.removeClass("thisOn");
+        $contact.removeClass("thisOn");
+        $works.removeClass("thisOn");
 
         loadAnimation("div.load");
         if(center.hasClass("enlarge")){
@@ -169,6 +169,7 @@ $about.on("click", function(){
 });
 
 $works.on("click", function(){
+    center.removeClass("nullH");
     $("div#content").show();
     if($("#worksC").hasClass("hide")){
         //window.sessionStorage.setItem('view', "works");
@@ -191,10 +192,10 @@ $works.on("click", function(){
         $("#contactC").addClass("hide");
         $("#worksC").hide().removeClass("hide");
     
-        $works.css("color", "rgb(248, 248, 248)");
-        $home.css("color", "rgb(150, 150, 150)");
-        $about.css("color", "rgb(150, 150, 150)");
-        $contact.css("color", "rgb(150, 150, 150)");
+        $works.addClass("thisOn");
+        $home.removeClass("thisOn");
+        $about.removeClass("thisOn");
+        $contact.removeClass("thisOn");
 
         loadAnimation("div.load");
         center.removeClass("original fade").css({
