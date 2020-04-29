@@ -28,8 +28,9 @@
         width: 50%;
         min-width: 400px;
     }
-    div.fade{
-        opacity: 0.9;
+    #content p.keywords{
+        font-size: 10pt;
+        margin-bottom: 8px;
     }
 }
 
@@ -40,6 +41,20 @@
     }
     #worksC div.imgHolder{
         opacity: 1;
+    }
+    div.fade{
+        opacity: 1;
+    }
+    div.imgHolder.hover, #worksC div.imgHolder.hover, div#worksC div.imgHolder.hover{
+        opacity: .9;
+        filter: none;
+    }
+    div.fade-info, div.slow-fade:hover div.fade-info{
+        transition: none;
+        opacity: .8;
+        visibility: hidden;
+        height: 10%;
+        padding-bottom: 4px;
     }
     div.infoTxt{
         display: block;

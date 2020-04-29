@@ -28,30 +28,29 @@ a{
     text-decoration: none;
     color: none;
 }
-a:active{
-    color: none;
-}
-a:hover{
+a:active, a:hover{
     color: none;
 }
 div.empty{
     height: 50px;
 }
 div#iframe{
-    width: auto;
     margin: 0 auto;
     position: relative;
     display: block;
     width: 80%;
+    height: auto;
     padding-bottom: 56.25%;
     margin-bottom: 50px;
 }
 iframe{
+    border-style: none;
+    border: 0;
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
-    top: 0;
+    bottom: 0;
 }
 div.infoTxt{
     display: inline-block;
@@ -75,7 +74,7 @@ div#worksC .picCol div.imgHolder{
     transform: translateZ(-0.5px);
     padding: 0;
     margin: 0 auto;
-    display: inline-block;
+    display: block;
     min-width: 300px;
     width: 100%;
     height: auto;

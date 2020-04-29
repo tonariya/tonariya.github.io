@@ -1,7 +1,7 @@
 //array of divs
 var workPrev1 = $("#lane1 div.imgHolder");
 var workPrev2 = $("#lane2 div.imgHolder");
-var workList = $("#worksC div.imgHolder");
+//var workList = $("#worksC div.imgHolder");
 
 var width = $(window).width();
 
@@ -19,10 +19,10 @@ var lMouseX, lMouseY, moveX, moveY;
 moveIt();
 
 $(window).mousemove(function( event ) {
-    lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - event.clientX));
+    //lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - event.clientX));
     lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - event.clientY));
 	
-	followx = (40 * lMouseX) / 100;
+	//followx = (40 * lMouseX) / 100;
 	followy = (20 * lMouseY) / 100;
 
 });
