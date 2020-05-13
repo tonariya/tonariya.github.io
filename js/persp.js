@@ -3,7 +3,7 @@ var workPrev1 = $("#lane1 div.imgHolder");
 var workPrev2 = $("#lane2 div.imgHolder");
 //var workList = $("#worksC div.imgHolder");
 
-var width = $(window).width();
+var width = window.innerWidth;//$(window).width();
 
 var followx = 0,
 	followy = 0,
@@ -31,14 +31,14 @@ function moveIt(){
 	//x += (followx - x) * friction;
     y += (followy - y) * friction;
 
-    if(!$lane1.hasClass("hide") || !$lane2.hasClass("hide")){
+    if(!$lane1.classList.contains("hide") || !$lane2.classList.contains("hide")){
         //lane 1
         /*workPrev1.each(function() {
             imgX = $(this).offset().left * 0.15;
             imgY = $(this).offset().top * 0.0045;
             $(this).css({"-webkit-transform":"translateY("+y*imgY+"px)"});
         });*/
-        $lane1.css({"-webkit-transform":"translateY("+y+"px)"});
+        $lane1.style.transform = "translateY("+y+"px)";
 
         //lane 2
         /*workPrev2.each(function() {
@@ -46,7 +46,7 @@ function moveIt(){
             imgY = $(this).offset().top * 0.0025;
             $(this).css({"-webkit-transform":"translateY("+y*imgY+"px)"});
         });*/
-        $lane2.css({"-webkit-transform":"translateY("+y+"px)"});
+        $lane2.style.transform = "translateY("+y+"px)";
     }
 
     //work list preview

@@ -40,21 +40,25 @@ div#iframe{
     display: block;
     width: 80%;
     height: auto;
-    padding-bottom: 56.25%;
+    padding-bottom: 48.6%;
     margin-bottom: 50px;
+    margin-top: 2%;
 }
 iframe{
     border-style: none;
     border: 0;
     position: absolute;
-    width: 100%;
+    width: 108%;
     height: 100%;
-    left: 0;
+    left: -3.25%;
     bottom: 0;
+}
+div#iframe div.shadow{
+    right: 8%;
 }
 div.infoTxt{
     display: inline-block;
-    width: 32vw;
+    width: 31vw;
     max-width: 420px;
     padding: 0;
     height: auto;
@@ -79,6 +83,9 @@ div#worksC .picCol div.imgHolder{
     width: 100%;
     height: auto;
     margin-bottom: 12px;
+}
+div#worksC .picCol div.imgHolder.no-transform{
+    transform: translateZ(0);
 }
 div#worksC div.picCol div.iki{
     width: 60%;

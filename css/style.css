@@ -190,9 +190,13 @@ div#worksC div.imgHolder{
 }
 div#worksC div.imgHolder.hover{
     filter: brightness(0.4);
+    -webkit-filter: brightness(0.4);
+    -moz-filter: brightness(0.4);
 }
 div#worksC div.imgHolder.hover:hover{
     filter: brightness(1);
+    -webkit-filter: brightness(1);
+    -moz-filter: brightness(1);
 }
 
 div.fade-info{
@@ -204,6 +208,7 @@ div.fade-info{
     bottom: 0;
     text-indent: 25px;
     -webkit-transition: .4s ease-out;
+    -moz-transition: .4s ease-out;
     transition: .4s ease-out;
     background-color: rgba(25,25,25, .8);
 }
@@ -242,7 +247,9 @@ div.fade{
 }
 div.hover:hover{
     opacity: 1;
-    transition: opacity 0.5s;
+    transition: opacity 0.25s;
+    -webkit-transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
     /*z-index: 500;*/
 }
 
