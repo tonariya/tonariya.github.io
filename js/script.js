@@ -4,8 +4,6 @@ var $contact = document.getElementById("contact"),
     $about = document.getElementById("about"),
     $works = document.getElementById("works"),
     $home = document.getElementById("home"),
-    $lane1 = document.getElementById("lane1"),
-    $lane2 = document.getElementById("lane2"),
     $home_container = document.getElementById("homeC"),
     $works_container = document.getElementById("worksC");
     $about_container = document.getElementById("aboutC"),
@@ -19,9 +17,10 @@ var $contact = document.getElementById("contact"),
 });*/
 
 function loadAnimation(e){
-    $(e).addClass("loadAnim").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){
+    //LOADING ANIMATION SURPRESSED FOR NOW
+    /*$(e).addClass("loadAnim").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){
         $(e).removeClass("loadAnim");
-    });
+    });*/
 }
 
 var tabletSize = 1024;
@@ -55,7 +54,7 @@ $(".left.click").on("click", function(e){
     loadAnimation("div.load");
 })
 $(".bar h3").on("click", function(){
-    $("div#content").show();
+    $content.classList.remove("hide");//$("div#content").show();
 });
 $("div.min").on("click", function(){
     $("div#content").toggle("hide");
@@ -104,7 +103,7 @@ $contact.onclick = function(){
         $about.classList.remove("thisOn");
 
         loadAnimation("div.load");
-        $("#contactC").fadeIn(1000);
+        //$("#contactC").fadeIn(1000);
     }
 };
 $home.onclick = function(){
@@ -133,7 +132,7 @@ $home.onclick = function(){
             $lane2.classList.remove("hide");
             //center.draggable( 'enable' );
         }
-        $("#homeC").fadeIn(1000);
+        //$("#homeC").fadeIn(1000);
     }
 };
 $about.onclick = function(){
@@ -162,13 +161,14 @@ $about.onclick = function(){
             $lane2.classList.remove("hide");
             //center.draggable( 'enable' );
         }
-        $("#aboutC").fadeIn(1000);
+        //$("#aboutC").fadeIn(1000);
     }
 };
 
 $works.onclick = function(){
     center.classList.remove("nullH");
-    $("div#content").show();
+    $content.classList.remove("hide");//$("div#content").show();
+    
     if($works_container.classList.contains("hide")){
         window.sessionStorage.setItem('view', "works");
         localStorage.setItem('works', true);
@@ -203,7 +203,7 @@ $works.onclick = function(){
         center.style.top = "0";
         center.classList.add("enlarge");
 
-        $("#worksC").fadeIn(1000);
+        //$("#worksC").fadeIn(1000);
     }
 };
 

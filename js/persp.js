@@ -1,11 +1,7 @@
 //array of divs
-var workPrev1 = $("#lane1 div.imgHolder");
-var workPrev2 = $("#lane2 div.imgHolder");
-//var workList = $("#worksC div.imgHolder");
-
 var width = window.innerWidth;//$(window).width();
 
-var followx = 0,
+let followx = 0,
 	followy = 0,
 	x = 0,
 	y = 0,
@@ -14,7 +10,7 @@ var followx = 0,
     vely = 0.00455,
     imgX,
     imgY;
-var lMouseX, lMouseY, moveX, moveY;
+let lMouseX, lMouseY, moveX, moveY;
 
 moveIt();
 
@@ -28,35 +24,11 @@ $(window).mousemove(function( event ) {
 });
 
 function moveIt(){
-	//x += (followx - x) * friction;
-    y += (followy - y) * friction;
 
     if(!$lane1.classList.contains("hide") || !$lane2.classList.contains("hide")){
-        //lane 1
-        /*workPrev1.each(function() {
-            imgX = $(this).offset().left * 0.15;
-            imgY = $(this).offset().top * 0.0045;
-            $(this).css({"-webkit-transform":"translateY("+y*imgY+"px)"});
-        });*/
-        $lane1.style.transform = "translateY("+y+"px)";
-
-        //lane 2
-        /*workPrev2.each(function() {
-            imgX = $(this).offset().left * 0.0013;
-            imgY = $(this).offset().top * 0.0025;
-            $(this).css({"-webkit-transform":"translateY("+y*imgY+"px)"});
-        });*/
-        $lane2.style.transform = "translateY("+y+"px)";
+        y += (followy - y) * friction;
+        lane1.style.transform = "translateY("+y+"px)";
+        lane2.style.transform = "translateY("+y+"px)";
     }
-
-    //work list preview
-    /*if(!$("#worksC").hasClass("hide")){
-        workList.each(function() {
-            imgX = $(this).offset().left * 0.0012;
-            imgY = $(this).offset().top * 0.0024;
-            $(this).css({"-webkit-transform":"translate("+x*imgX+"px, "+y*imgY+"px)"});
-        });
-    }*/
-    
     window.requestAnimationFrame(moveIt);
 }
