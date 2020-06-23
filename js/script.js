@@ -1,4 +1,5 @@
 var center = document.getElementById("center");
+var width = window.innerWidth;
 
 var $contact = document.getElementById("contact"),
     $about = document.getElementById("about"),
@@ -11,11 +12,6 @@ var $contact = document.getElementById("contact"),
     $content = document.getElementById("content"),
     bar = $("div.bar");
 
-/*center.draggable({
-    handle: "div.bar",
-    scroll: "false"
-});*/
-
 function loadAnimation(e){
     //LOADING ANIMATION SURPRESSED FOR NOW
     /*$(e).addClass("loadAnim").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){
@@ -23,8 +19,8 @@ function loadAnimation(e){
     });*/
 }
 
-var tabletSize = 1024;
-var width = window.innerWidth;//$(window).width();
+let tabletSize = 1024;
+//let width = window.innerWidth;//$(window).width();
 
 $( document ).ready(function() {
     $("div#loadScreen").remove();
@@ -37,15 +33,12 @@ $( document ).ready(function() {
     }
 
     var view = window.sessionStorage.getItem('view');
-    var showWorks = localStorage.getItem('works');
     if(view == "about"){
         $about.click();
     } else if(view == "contact"){
         $contact.click();
     } else if(view == "home"){
         $home.click();
-    } else if(showWorks){
-        $works.click();
     }
     loadAnimation("div.load");
 });
@@ -54,7 +47,7 @@ $(".left.click").on("click", function(e){
     loadAnimation("div.load");
 })
 $(".bar h3").on("click", function(){
-    $content.classList.remove("hide");//$("div#content").show();
+    $content.classList.remove("hide");
 });
 $("div.min").on("click", function(){
     $("div#content").toggle("hide");
@@ -65,15 +58,11 @@ $("div.min").on("click", function(){
         $lane1.classList.remove("hide");
         $lane2.classList.remove("hide");
         $content.classList.add("hide");
-
-        //console.log("hide");
     } else if(center.classList.contains("enlarge nullH")){
         //and hide it otherwise
         $lane1.classList.add("hide");
         $lane2.classList.add("hide");
-        $content.classList.remove("hide"); //.show()
-
-        //console.log("show");
+        $content.classList.remove("hide");
     }
     center.classList.toggle("nullH");
 });
@@ -86,20 +75,16 @@ $contact.onclick = function(){
         $(".bar div.left").removeClass("margin-adjust");
         $lane1.classList.remove("hide");
         $lane2.classList.remove("hide");
-        //center.draggable( 'enable' );
     }
     if($contact_container.classList.contains("hide")){
         window.sessionStorage.setItem('view', "contact");
-        localStorage.setItem('works', false);
 
         $about_container.classList.add("hide");
         $home_container.classList.add("hide");
-        $works_container.classList.add("hide");
         $contact_container.classList.remove("hide"); //hide()
 
         $contact.classList.add("thisOn");
         $home.classList.remove("thisOn");
-        $works.classList.remove("thisOn");
         $about.classList.remove("thisOn");
 
         loadAnimation("div.load");
@@ -110,16 +95,13 @@ $home.onclick = function(){
     
     if($home_container.classList.contains("hide")){
         window.sessionStorage.setItem('view', "home");
-        localStorage.setItem('works', false);
 
         $contact_container.classList.add("hide");
         $about_container.classList.add("hide");
-        $works_container.classList.add("hide");
         $home_container.classList.remove("hide"); //hide()
 
         $home.classList.add("thisOn");
         $about.classList.remove("thisOn");
-        $works.classList.remove("thisOn");
         $contact.classList.remove("thisOn");
 
         loadAnimation("div.load");
@@ -139,17 +121,14 @@ $about.onclick = function(){
     
     if($about_container.classList.contains("hide")){
         window.sessionStorage.setItem('view', "about");
-        localStorage.setItem('works', false);
 
         $contact_container.classList.add("hide");
         $home_container.classList.add("hide");
-        $works_container.classList.add("hide");
         $about_container.classList.remove("hide"); //hide()
 
         $about.classList.add("thisOn");
         $home.classList.remove("thisOn");
         $contact.classList.remove("thisOn");
-        $works.classList.remove("thisOn");
 
         loadAnimation("div.load");
         if(center.classList.contains("enlarge")){
@@ -167,43 +146,7 @@ $about.onclick = function(){
 
 $works.onclick = function(){
     center.classList.remove("nullH");
-    $content.classList.remove("hide");//$("div#content").show();
-    
-    if($works_container.classList.contains("hide")){
-        window.sessionStorage.setItem('view', "works");
-        localStorage.setItem('works', true);
-        //note: "works" is never added to sessionStorage as, by default, you are
-        //always returning from WORKS pages to INDEX
-        //i.e. WORKS pages aren't single page websites,thus not requiring sessionStorage
-
-        //nvm I was wrong, turns out I really do need to store it in order to have
-        //the correct highlights in the window bar lol
-
-        $lane1.classList.add("hide");
-        $lane2.classList.add("hide"); //both hide()
-
-        $(".bar div.left").addClass("margin-adjust");
-        
-        //center.draggable( 'disable' );
-
-        $about_container.classList.add("hide");
-        $home_container.classList.add("hide");
-        $contact_container.classList.add("hide");
-        $works_container.classList.remove("hide"); //hide()
-    
-        $works.classList.add("thisOn");
-        $home.classList.remove("thisOn");
-        $about.classList.remove("thisOn");
-        $contact.classList.remove("thisOn");
-
-        loadAnimation("div.load");
-        center.classList.remove("original");
-        center.classList.remove("fade");
-        center.style.left = "0";
-        center.style.top = "0";
-        center.classList.add("enlarge");
-
-        //$("#worksC").fadeIn(1000);
-    }
+    $content.classList.remove("hide");
+    window.location.href = "works.html";
 };
 

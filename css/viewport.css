@@ -18,6 +18,10 @@
         font-size: 32px;
     }
 
+    div.imgHolder img{
+        height: -webkit-fill-available;
+    }
+
 }
 
 /*----Tablet-----*/
@@ -54,7 +58,7 @@
     }
     div.fade-info, div.slow-fade:hover div.fade-info{
         transition: none;
-        opacity: .8;
+        opacity: .9;
         visibility: hidden;
         height: 10%;
         padding-bottom: 4px;
@@ -112,8 +116,8 @@
 /*----Mobile S / M / L-----*/
 @media screen and (max-width: 767px) {
     /*body { background-color: yellow; }*/
-    div.fade{
-        opacity: 0.9;
+    div.imgHolder.hover, #worksC div.imgHolder.hover, div#worksC div.imgHolder.hover{
+        opacity: 1;
     }
     div#center.original{
         max-height: 650px;

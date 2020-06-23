@@ -6,10 +6,10 @@ var lane = document.getElementsByClassName("lane"),
 var lane1ImgHolder = document.getElementById("lane1").getElementsByClassName("imgHolder");
 var lane2ImgHolder = document.getElementById("lane2").getElementsByClassName("imgHolder");
 
-function init(){
+var init = function(){
     for(var i = 0 ; i<lane1ImgHolder.length; i++) {
-        var x = 150;
-        var y = Math.random() * (100 - (-20)) + (-20);
+        let x = 150;
+        let y = Math.random() * (100 - (-20)) + (-20);
 
         lane1ImgHolder[i].style.top = y+"px";
         lane1ImgHolder[i].style.marginLeft = x+"px";
@@ -17,16 +17,16 @@ function init(){
     
     for(var i = 0; i<lane2ImgHolder.length; i++){
         //pick two random numbers between 0 and 100 for x, etc
-        var x = 16;
-        var y = Math.random() * (-100);
+        let x = 16;
+        let y = Math.random() * (-100);
     
        lane2ImgHolder[i].style.bottom = y+"px";
        lane2ImgHolder[i].style.marginLeft = x+"px";
     }
 }
-init();
+//init();
 //lane 1
-var lane1Img0 = lane1ImgHolder[0].cloneNode(true),
+let lane1Img0 = lane1ImgHolder[0].cloneNode(true),
     lane1Img1c1 = lane1ImgHolder[1].cloneNode(true),
     lane1Img1c2 = lane1ImgHolder[1].cloneNode(true),
     lane1Img2c1 = lane1ImgHolder[2].cloneNode(true),
@@ -41,13 +41,13 @@ $lane1.appendChild(lane1Img1c2);
 $lane1.appendChild(lane1Img2c2);
 
 function getCssProperty(elmId, property){
-    var elem = document.getElementById(elmId);
+    let elem = document.getElementById(elmId);
     return window.getComputedStyle(elem,null).getPropertyValue(property);
  }
 
-var sliderStartForward = lane1ImgHolder[0].style.left;
-var sliderEndForward = lane1ImgHolder[6].style.left - $lane1.offsetWidth;
-var sliderStartBackward = $lane1.offsetWidth - lane1ImgHolder[0].style.left;
+let sliderStartForward = lane1ImgHolder[0].style.left;
+let sliderEndForward = lane1ImgHolder[6].style.left - $lane1.offsetWidth;
+let sliderStartBackward = $lane1.offsetWidth - lane1ImgHolder[0].style.left;
 
 lane1ImgHolder[0].classList.add("first");
 
@@ -63,7 +63,7 @@ lane1ImgHolder[0].classList.add("first");
 });*/
 
 //lane 2
-var lane2Img0 = lane2ImgHolder[0].cloneNode(true),
+let lane2Img0 = lane2ImgHolder[0].cloneNode(true),
     lane2Img1c1 = lane2ImgHolder[1].cloneNode(true),
     lane2Img1c2 = lane2ImgHolder[1].cloneNode(true),
     lane2Img2c1 = lane2ImgHolder[2].cloneNode(true),
@@ -78,9 +78,9 @@ $lane2.appendChild(lane2Img0);
 $lane2.appendChild(lane2Img1c2);
 $lane2.appendChild(lane2Img2c2);
 
-var sliderStartForward2 = lane2ImgHolder[0].style.left;
-var sliderEndForward2 = lane2ImgHolder[6].style.left -$lane2.offsetWidth;
-var sliderStartBackward2 = $lane2.offsetWidth - lane2ImgHolder[0].style.left;
+let sliderStartForward2 = lane2ImgHolder[0].style.left;
+let sliderEndForward2 = lane2ImgHolder[6].style.left -$lane2.offsetWidth;
+let sliderStartBackward2 = $lane2.offsetWidth - lane2ImgHolder[0].style.left;
 
 lane2ImgHolder[0].classList.add("first2");
 

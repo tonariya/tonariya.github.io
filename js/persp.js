@@ -1,5 +1,4 @@
-//array of divs
-var width = window.innerWidth;//$(window).width();
+var width = window.innerWidth;
 
 let followx = 0,
 	followy = 0,
@@ -24,11 +23,10 @@ $(window).mousemove(function( event ) {
 });
 
 function moveIt(){
-
     if(!$lane1.classList.contains("hide") || !$lane2.classList.contains("hide")){
         y += (followy - y) * friction;
-        lane1.style.transform = "translateY("+y+"px)";
-        lane2.style.transform = "translateY("+y+"px)";
+        document.getElementById("lane-wrap").style.transform = "translateY("+y+"px)";
+        //$lane2.style.transform = "translateY("+y+"px)";
+        window.requestAnimationFrame(moveIt);
     }
-    window.requestAnimationFrame(moveIt);
 }
