@@ -18,3 +18,7 @@ $home.on("click", function(){
     window.sessionStorage.setItem('view', "home");
     window.location.href = "../index.html";
 });
+$works.on("click", function(){
+    window.sessionStorage.setItem('view', "works");
+    window.location.href = "../works.html";
+});

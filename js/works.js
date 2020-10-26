@@ -40,4 +40,3 @@ $about.onclick = function(){
     window.sessionStorage.setItem('view', "about");
     window.location.href = "index.html";
 };
-
