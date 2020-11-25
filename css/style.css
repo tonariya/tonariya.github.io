@@ -163,7 +163,7 @@ div.barButt h3:hover, div.min:hover{
     color: rgb(184, 0, 56);
     border-bottom: 2px solid rgb(184, 0, 56);
 }
-span.highlight, div.donwload, div.downloa h3{
+span.highlight, .highlight, div.donwload, div.downloa h3{
     color: rgb(184, 0, 56);
 }
 h3.thisOn, div.barButt h3.thisOn:hover{
@@ -402,7 +402,7 @@ h1, h2{
 #content p{
     color: rgb(40, 24, 32);
     font-family: 'Noto Sans', sans-serif;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 600;
 }
 #content p.grey{

@@ -47,9 +47,10 @@
 /*----Tablet & Mobile----*/
 @media screen and (max-width: 1024px){
     div.imgHolder.hover, div.fade, div.lane div.imgHolder, #worksC div.imgHolder, div#worksC div.imgHolder.hover{
-        opacity: .95;
+        opacity: 1;
         filter: none;
     }
+    div.infoTxt.left{float: unset;}
     div.fade-info, div.slow-fade:hover div.fade-info{
         transition: none;
         opacity: .9;
@@ -70,13 +71,13 @@
         float: none;
         text-align: left;
         right: 4px;
+        margin-top: 2vh;
     }
-    div#worksC{
-        height: 103vh;
-    }
-    div.picCol.wider{
-        max-width: 100%;
-    }
+    div#worksC{height: 103vh;}
+    div#worksC .picCol div.imgHolder {margin-left: 2vw;}
+    
+    div.picCol.wider{max-width: 100%;}
+    div.infoTxt p{max-width: 90%;}
     div.picContainer{
         position: relative;
         top: initial;
@@ -126,8 +127,8 @@
         height: 96vh;
         padding-top: 5vh;
     }
-    div.bar div.left.margin-adjust, div.bar div.left, div.infoTxt{
-        margin-left: 6%;
+    div.bar div.left.margin-adjust, div.bar div.left, div.infoTxt, div.infoTxt.left{
+        margin-left: 5%;
     }
     div.empty{
         height: 15px;
@@ -174,5 +175,9 @@
     }
     div#worksC .picCol div.imgHolder{
         margin-bottom: 18px;
+        margin-left: 0;
+        margin-top: 3vh;
+        right: 6vw;
+        width: 108%;
     }
 }
