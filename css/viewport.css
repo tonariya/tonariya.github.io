@@ -25,7 +25,7 @@
 }
 
 /*----Tablet-----*/
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1024px) and (min-width: 856px) {
     /*body { background-color: pink; }*/
     div#center.original{
         margin-top: 2%;
@@ -39,21 +39,15 @@
     div#iframe{
         margin-top: 8%;
     }
+    div#worksC div.imgHolder{
+        height: 33.3%;
+    }
 }
 
 /*----Tablet & Mobile----*/
 @media screen and (max-width: 1024px){
-    #center{
-        opacity: 1;
-    }
-    #worksC div.imgHolder{
-        opacity: 1;
-    }
-    div.fade{
-        opacity: 1;
-    }
-    div.imgHolder.hover, #worksC div.imgHolder.hover, div#worksC div.imgHolder.hover{
-        opacity: .9;
+    div.imgHolder.hover, div.fade, div.lane div.imgHolder, #worksC div.imgHolder, div#worksC div.imgHolder.hover{
+        opacity: .95;
         filter: none;
     }
     div.fade-info, div.slow-fade:hover div.fade-info{
@@ -76,6 +70,9 @@
         float: none;
         text-align: left;
         right: 4px;
+    }
+    div#worksC{
+        height: 103vh;
     }
     div.picCol.wider{
         max-width: 100%;
@@ -114,9 +111,9 @@
 }
   
 /*----Mobile S / M / L-----*/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 855px) {
     /*body { background-color: yellow; }*/
-    div.imgHolder.hover, #worksC div.imgHolder.hover, div#worksC div.imgHolder.hover{
+    div.imgHolder, div.imgHolder.hover, #worksC div.imgHolder.hover, div#worksC div.imgHolder.hover{
         opacity: 1;
     }
     div#center.original{
@@ -126,7 +123,8 @@
     }
     div#center.enlarge, div#content, div#worksC{
         overflow-y: unset;
-        height: 100%;
+        height: 96vh;
+        padding-top: 5vh;
     }
     div.bar div.left.margin-adjust, div.bar div.left, div.infoTxt{
         margin-left: 6%;
@@ -137,12 +135,15 @@
     div#worksC div.imgHolder{
         width: 100%;
     }
-    div.lane, div.min{
+    div.min{
         visibility: hidden;
         position: absolute;
     }
     .bar div.left{
         width: 90%;
+    }
+    div#center div.bar>div.left{
+        margin-left: 5vw !important;
     }
     .bar div.barButt{
         width: 48%;
