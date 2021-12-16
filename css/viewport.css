@@ -1,183 +1,348 @@
+@media screen and (min-width: 2500px) {
+    div.introTxt p, div#about-txt p, p{
+        font-size: 22pt;
+        line-height: normal;
+    }
+    div.introTxt p, div#about-txt p{
+        width: 34vw;
+        max-width: unset;
+    }
+}
 /*---- 4 K -----*/
-@media screen and (min-width: 2560px) {
-    /*body { background-color: green; }*/
-    div#center.original{
-        margin-top: 18%;
-        width: 60%;
-        min-width: 500px;
-        max-width: 950px;
+@media screen and (min-width: 1440px) {
+    #center-div, div.main{
+        width: 65vw !important;
     }
-    h3{
-        font-size: 32px;
-        min-height: 32px;
+    div.main{
+        height: 80% !important;
     }
-    h1{
-        font-size: 54px;
+    #img-iki{
+        left: 23vw !important;
     }
-    p{
-        font-size: 32px;
+    div#about-txt{
+        left: 26%;
+    }
+    div.flipContainer{
+        left: 18%;
+    }
+}
+
+/*----Tablet / Laptop-----*/
+@media screen and (max-width: 1440px) and (min-width: 856px) {
+    div.absolute{
+        /*position: absolute;*/
+    }
+    #center-div{
+        margin-top: 5vh;
+    }
+    div.main{
+        margin-right: auto !important;
+        height: 87vh !important;
+        width: 90vw !important;
+    }
+    a>img{
+        min-width: 225px;
+        width: 25vw;
+        max-width: 26%;
+    }
+    img#img-wave{
+        left: 30vw;
+        top: 12vh;
+    }
+    img#img-4walls{
+        top: 21vh;
+        right: 9vw;
     }
 
-    div.imgHolder img{
-        height: -webkit-fill-available;
+    img#img-vinyl{
+        bottom: 36vh;
+        left: 12vw;
+    }
+    img#img-iki{
+        bottom: 33vh;
+        left: 38vw;
+    }
+    img#img-pixel{
+        right: 0;
+        bottom: 28vh;
+    }
+
+    img#img-workit{
+        bottom: 14vh;
+        left: 18vw;
+    }
+    img#img-illustration{
+        bottom: 10vh;
+        right: 20vw;
     }
 
 }
 
-/*----Tablet-----*/
-@media screen and (max-width: 1024px) and (min-width: 856px) {
-    /*body { background-color: pink; }*/
-    div#center.original{
-        margin-top: 2%;
-        width: 50%;
-        min-width: 400px;
+/*----Ipad Pro----*/
+@media screen and (width: 1024px) and (height: 1366px){
+    div#about-txt{
+        left: 18%;
     }
-    #content p.keywords{
-        font-size: 10pt;
-        margin-bottom: 8px;
+    div.card img{
+        width: 23% !important;
     }
-    div#iframe{
-        margin-top: 8%;
+    div.flipContainer{
+        top: 51rem;
     }
-    div#worksC div.imgHolder{
-        height: 33.3%;
+    a>img{
+        width: 36vw;
+        max-width: unset;
     }
-}
 
-/*----Tablet & Mobile----*/
-@media screen and (max-width: 1024px){
-    div.imgHolder.hover, div.fade, div.lane div.imgHolder, #worksC div.imgHolder, div#worksC div.imgHolder.hover{
-        opacity: 1;
-        filter: none;
+    img#img-wave{
+        top: 11vh;
+        left: 36vw;
     }
-    div.infoTxt.left{float: unset;}
-    div.fade-info, div.slow-fade:hover div.fade-info{
-        transition: none;
-        opacity: .9;
-        visibility: hidden;
-        height: 10%;
-        padding-bottom: 4px;
+    img#img-4walls{
+        top: 27vh;
+        right: 0;
     }
-    div.infoTxt{
-        display: block;
-        width: 88%;
-        padding: 0;
-        height: auto;
-        margin-left: 12%;
-        position: relative;
-        text-align: left;
+    img#img-workit{
+        bottom: 24vh;
+        left: 9vw;
     }
-    #worksC.right, #worksC.left, #iframe.right, #iframe.left, div.picCol.right, div.picCol.left{
-        float: none;
-        text-align: left;
-        right: 4px;
-        margin-top: 2vh;
-    }
-    div#worksC{height: 103vh;}
-    div#worksC .picCol div.imgHolder {margin-left: 2vw;}
     
-    div.picCol.wider{max-width: 100%;}
-    div.infoTxt p{max-width: 90%;}
-    div.picContainer{
-        position: relative;
-        top: initial;
-        overflow-y: unset;
-        height: auto;
-        width: 100%;
-        height: 100%;
+    img#img-iki{
+        bottom: 39vh;
+        left: 28vw;
     }
-    div.picCol{
-        overflow-y: unset;
-        position: fixed;
-        height: auto;
-        max-height: 100%;
-        width: 100%;
-        max-width: 100%;
-        top: initial;
+    img#img-pixel{
+        bottom: 22vh;
+        right: 5vw;
     }
-    .right{
-        float: unset;
+    img#img-vinyl{
+        bottom: 44vh;
+        left: -3vw;
     }
 
-    div#iframe{
-        padding-bottom: 45%;
-    }
-    iframe{
-        left: 0;
-        width: 100%;
-    }
-    div#iframe div.shadow{
-        right: 4%;
+    img#img-illustration{
+        bottom: 9vh;
+        right: 32vw;
     }
 }
-  
+/*
+@media screen and (min-width: 1024px) and (max-width: 1440px){
+    div.flipContainer{
+        right: 28vw;
+    }
+    img{
+        width: 45vh;
+    }
+    div.infoTxt {
+        left: 40vw;
+        top: 58vh;
+    }
+
+}*/
+
 /*----Mobile S / M / L-----*/
 @media screen and (max-width: 855px) {
-    /*body { background-color: yellow; }*/
-    div.imgHolder, div.imgHolder.hover, #worksC div.imgHolder.hover, div#worksC div.imgHolder.hover{
-        opacity: 1;
-    }
-    div#center.original{
-        max-height: 650px;
-        width: 90%;
-        display: block;
-    }
-    div#center.enlarge, div#content, div#worksC{
-        overflow-y: unset;
-        height: 96vh;
-        padding-top: 5vh;
-    }
-    div.bar div.left.margin-adjust, div.bar div.left, div.infoTxt, div.infoTxt.left{
-        margin-left: 5%;
+    html, body{
+        overflow-x: hidden;
     }
     div.empty{
-        height: 15px;
+        height: 100px;
     }
-    div#worksC div.imgHolder{
+    nav a{
+        margin: 5vw;
+        font-size: 1.3rem;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    #left-div{
+        float:none;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 8vh;
+    }
+    div.infoTxt, div.introTxt{
+        position: relative;
+        left:0;
+    }
+    div.infoTxt{
+        width: 91vw;
+        left: unset;
+        margin: auto;
+        margin-top: 20%;
+        margin-bottom: 6%;
+    }
+    div.infoTxt p{
+        width: auto;
+        min-width: 100%;
+    }
+    div.introTxt p{
+        width: auto;
+        min-width: 100%;
+        font-size: 1.25rem;
+    }
+    #center-div{
+        position: relative;
+        width: 98vw;
+        height: unset;
+        margin-top: 2vh;
+        margin-left: 2vw;
+        left: 2vw;
+        top: 0 !important;
+        z-index: 50;
+    }
+    /*ABOUT PAGE*/
+    #about-center-div{
+        position: relative;
+        display: block;
+        width: 55vw;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 10rem;
+        margin-right: 22.5vw;
+        margin-left: 22.5vw;
+        top:0;
+        left: 0;
+    }
+    #about-txt{
+        position: relative;
+        display: block;
         width: 100%;
+        left: 0;
+        top: unset;
+        margin-top: 0;
+        float: unset;
     }
-    div.min{
-        visibility: hidden;
+    #about-txt p{
+        display: block;
+        min-width: unset;
+        width: 100%;
+        max-width: unset !important;
+        font-size: 1.25rem;
+    }
+    div.flipContainer{
+        display: block;
+        position: relative;
+        perspective: unset;
+        right: unset;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        float: unset;
+        margin-bottom: 2.3rem;
+    }
+    .front, .back{position: relative;}
+    div.card img{
+        display: block;
+        min-width: 150px;
+        width: 55%;
+        float: unset;
+    }
+    /*-------------*/
+    a>img{
+        width: 30vw;
+    }
+    img#img-wave{
+        top:0;
+        left:0;
+    }
+    img#img-4walls{
+        top:0;
+        left: 30vw;
+    }
+    img#img-workit{
+        top:0;
+        left:62vw;
+    }
+    
+    img#img-iki{
+        top: 18vh;
+        left: 0vw;
+    }
+    img#img-pixel{
+        top: 18vh;
+        left: 30vw;
+    }
+    img#img-vinyl{
+        top:18vh;
+        right: 2vw;
+        left: 62vw;
+    }
+
+    img#img-illustration{
+        top: 34vh;
+        left: 2vw;
+    }
+
+    div.undershadow{
+        /*position: relative!important;*/
+    }
+
+    div.abs{
         position: absolute;
     }
-    .bar div.left{
-        width: 90%;
+}
+
+/*----Mobile S / M / L-----*/
+@media screen and (max-width: 550px) {
+    nav a{
+        font-size: 1.1rem;
     }
-    div#center div.bar>div.left{
-        margin-left: 5vw !important;
+    #left-div{
+        width: 78vw;
     }
-    .bar div.barButt{
-        width: 48%;
-        display: inline-block;
-        margin-top: 2px;
-        padding-top: 6px;
-        margin-bottom: 4px;
-        text-align: center;
-        height: 36px;
-    }
-    .bar div.left div:nth-child(2), .bar div.left div:nth-child(1){
-        border-bottom: 4px solid rgb(100, 100, 100);
-    } 
-    div.barButt h3{
-        margin: 0 auto;
-        font-size: 26px;
-    }
-    div.bar{
-        max-height: 100px;
-        display: inline-block;
+    #left-div, #center-div{
+        z-index: 0;
         position: relative;
+        display: block;
+        height: unset!important;
     }
-    div#iframe{
-        margin-top: 4%;
+    #center-div{
+        left: 0!important;
     }
-    div#worksC div.imgHolder div.empty{
-        height: 50px;
+    a>img{
+        left: unset!important;
+        right: unset!important;
+        top: unset!important;
+        bottom: unset!important;
+        animation: none!important;
+        width: 80vw;
+        min-width: 300px;
+        position: relative;
+        display: block;
+        margin: auto;
+        margin-bottom: 2rem;
     }
-    div#worksC .picCol div.imgHolder{
-        margin-bottom: 18px;
-        margin-left: 0;
-        margin-top: 3vh;
-        right: 6vw;
-        width: 108%;
+    div.main img{
+        width: 90vw;
+        margin-left: 2vw;
+    }
+    img.inline, img.closeUp{
+        display: unset;
+        width: 100% !important;
+    }
+
+    div.infoTxt{
+        margin-top: 28%;
+        margin-bottom: 12%;
+    }
+
+    /*ABOUT PAGE*/
+    #about-center-div{
+        width: 74vw;
+        margin-left: 13vw;
+        margin-right: 13vw;
+        top: 0;
+        left: 0;
+    }
+    /*-------------*/
+}
+
+/*----Mobile S+-----*/
+@media screen and (max-width: 320px) {
+    nav a{
+        font-size: 1rem;
+        margin: 4vw;
     }
 }

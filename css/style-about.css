@@ -1,0 +1,93 @@
+body{
+    overflow: hidden;
+    overflow-y: auto;
+    height: unset;
+}
+#about-center-div{
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    margin: 0 auto;
+    z-index: 0;
+    display: block;
+    overflow-x: hidden;
+}
+div.empty{
+    position: relative;
+    display: block;
+    min-width: 100vw;
+    width: 100%;
+    height: 200px;
+}
+div.infoTxt{
+    position: relative;
+    display: block;
+    left: 25%;
+    top: 18vh;
+    margin-top:0;
+}
+p{
+    width: 40vw;
+    max-width: 475px;
+    text-align: justify;
+}
+
+div.flipContainer{
+    perspective: 1000px;
+    position: relative;
+    left: 24vw;
+    top: 52vh;
+    height: auto;
+}
+.card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform .6s;
+    transform-style: preserve-3d;
+}
+div.flipContainer:hover .card{
+    /*transform: rotateY(180deg);*/
+}
+.front, .back{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.back{
+    transform: rotateY(180deg);
+}
+img{
+    min-width: 320px;
+    width: 18vw;
+    max-width: 575px;
+}
+.contactIcon{
+    position: relative;
+    top: 8px;
+    margin-right: 10px;
+    min-width: unset;
+    width: 32px;
+    box-shadow: unset;
+}
+.contact, .contactIcon{
+    display: inline !important;
+    margin-bottom: unset;
+    margin-top: .25%;
+    text-decoration: none;
+}
+
+img.contactIcon:hover{
+    box-shadow: unset;
+}
+
+@media screen and (max-width: 855px) {
+    div.abs{
+        position: fixed !important;
+    }
+}
