@@ -159,7 +159,7 @@
         float:none;
         position: relative;
         margin: 0 auto;
-        margin-top: 8vh;
+        margin-top: 18vh;
     }
     div.infoTxt, div.introTxt{
         position: relative;
@@ -275,10 +275,6 @@
         left: 2vw;
     }
 
-    div.undershadow{
-        /*position: relative!important;*/
-    }
-
     div.abs{
         position: absolute;
     }
@@ -290,7 +286,7 @@
         font-size: 1.1rem;
     }
     #left-div{
-        width: 78vw;
+        width: 84vw;
     }
     #left-div, #center-div{
         z-index: 0;

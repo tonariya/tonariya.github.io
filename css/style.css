@@ -69,6 +69,9 @@ nav a{
 nav a:hover{
     color: rgb(150,150,150);
 }
+nav a.on:hover{
+    border-bottom: rgb(150,150,150) 4px solid;
+}
 div.mainBlock{
     z-index: 0;
     position: relative;
@@ -141,6 +144,7 @@ a{
 }
 a.on{
     color: rgb(60,60,60);
+    border-bottom: rgb(60,60,60) 4px solid;
 }
 div.infoTxt, div.introTxt{
     position: fixed;
@@ -288,7 +292,6 @@ h1, h4{
     font-size: 1.8rem;
 }
 p{
-    overflow-wrap: break-word;
     line-height: 2rem;
     margin: 0;
     font-family: 'Noto Sans', sans-serif;
@@ -299,10 +302,12 @@ p{
     width: 22vw;
     max-width: 450px;
     margin-bottom: 2vh;
-    text-align: justify;
+    text-align: left;
+    hyphens: auto;
 }
 div.introTxt p{
     font-size: 1.3rem;
+    line-height: 1.8rem;
     width: 32vw;
     max-width: 475px !important;
 }

@@ -31,7 +31,8 @@ div.infoTxt{
 p{
     width: 40vw;
     max-width: 475px;
-    text-align: justify;
+    text-align: left;
+    hyphens: auto;
 }
 
 div.flipContainer{
@@ -71,8 +72,9 @@ img{
     position: relative;
     top: 8px;
     margin-right: 10px;
-    min-width: unset;
-    width: 32px;
+    min-width: 16px;
+    width: 10%;
+    max-width: 32px;
     box-shadow: unset;
 }
 .contact, .contactIcon{
